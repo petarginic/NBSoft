@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <script src="./script.js"> </script>
+
+    <link rel="stylesheet" href="./mystyle.css">
+    <title>JS validacija forme</title>
+</head>
+    <body class="main">
+        <div class="wrapper" id="result">        
+            <form id="registration" class="registration_form " method="POST">        
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="firstName">First name</label>
+                    <input type="text" name="firstname" id="firstname" class="form-control" required />         
+                </div>
+            
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="lastname">Last name</label>
+                    <input type="text" name="lastname" id="lastname" class="form-control" required />         
+                </div>
+                
+                
+                <label class="form-label" for="lastname">Sex</label>
+                <div class="form-check mb-4 mt-2">
+                    <input class="form-check-input" value="male" type="radio" name="sex" checked>
+                    <label class="form-check-label" for="male">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" value="female" type="radio" name="sex">
+                    <label class="form-check-label" for="female">
+                        Female
+                    </label>
+                </div>
+                
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="birth">Date of birth</label>
+                    <input type="date" id="birth" class="form-control" required />         
+                </div>
+
+                <select class="form-select form-control mb-4" id="city" >                  
+                    <option  selected value="Belgrade">Belgrade</option>
+                    <option value="Novi sad">Novi sad</option>
+                    <option value="Nis">Nis</option>
+                    <option value="Kragujevac">Kragujevac</option>
+                </select>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea class="form-control" id="address" rows="2" required></textarea>
+                </div>
+                
+                <input type="submit" class="btn btn-primary btn-block mt-4" />
+            </form>
+
+            <div id="postRegistration" class="d-none">
+                <div class="success-menu">
+                    <h4 id="success-header">Successfully registered</h4>
+                    <div class="pt-4">
+                        <p>First Name: <strong><span id="firstNameLabel"></span></strong></p>
+                        <p>Last Name:<strong> <span id="lastNameLabel"></span></strong></p>
+                        <p>Sex: <strong><span id="sexLabel"></span></strong></p>
+                        <p>Birth: <strong><span id="birthLabel"></span></strong></p>
+                        <p>Address:<strong> <span id="addressLabel"></span></strong></p>
+                        <p>City: <strong><span id="cityLabel"></span></strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
