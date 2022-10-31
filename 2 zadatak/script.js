@@ -8,7 +8,22 @@ $(document).ready( function () {
         const sex      = $("[name='sex']").val();
         const city     = $("#city").val();
         const birth     = $("#birth").val();
-        const address   = $("#address").val(); 
+        const address   = $("#address").val();
+
+        if (!isValidField(firstname, 3, 100)) {
+            alert("First name should be between 3 and 100 characters");
+            return;
+        }
+
+        if (!isValidField(lastname, 3, 100)) {
+            alert("Last name should be between 3 and 100 characters");
+            return;
+        }
+
+        if (!isValidField(address, 3, 100)) {
+            alert("Address should be between 3 and 100 characters");
+            return;
+        }
 
         const body = {
             firstname: firstname,
@@ -34,7 +49,17 @@ $(document).ready( function () {
 
                 $("#registration").addClass("d-none");
                 $("#postRegistration").removeClass("d-none");
-            },           
+            },
         });
     });
+
+    const isValidField = (fieldValue, minLength, maxLength) => {
+        if (!fieldValue && minLength && minLength > 0) {
+            return false;
+        }
+
+        return fieldValue.length >= minLength && fieldValue.length <= maxLength;
+    }
 });
+
+
