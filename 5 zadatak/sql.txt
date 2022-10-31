@@ -21,7 +21,7 @@ c) Prikažite sve korisnike koji su imali najmanje dve porudžbine
 
 
 d) Prikažite ime I prezime korisnika, id porudžbine I broj stavki za svaku porudžbinu
-SELECT  firstname,lastname from `orderitem`
+SELECT  firstname,lastname,orders.id from `orderitem`
 INNER JOIN(`orders`) ON orders.id=orderitem.orderId 
 INNER JOIN(`user`) ON user.id=orders.userId
 GROUP BY(orderId) 
@@ -36,12 +36,4 @@ INNER JOIN(`user`) ON user.id=orders.userId
 GROUP BY(orderId) 
 HAVING COUNT(productId) >=2;
 
-
-f) Prikažite sve korisnike koji su kupili najmanje tri različita proizvoda u svim porudžbinama 
-
-SELECT firstname,lastname,email,phone FROM orderitem 
-INNER JOIN(`orders`) ON orders.id=orderitem.orderId 
-INNER JOIN(`user`) ON user.id=orders.userId
-GROUP BY(productId)
-HAVING COUNT(productId) >=3;
 
