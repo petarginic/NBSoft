@@ -10,6 +10,7 @@
     min-height: 100vh;   
 }
 
+
 .first-section {  
     background-color: #f4f4f4;
     border-left: 1px solid #a5a5a5;
@@ -92,8 +93,28 @@ a:link {
     font-weight: bold;
     margin-top: 28px;
     padding-left: 4rem;
+
 }
 
 .custom2 {
     width: 95%; 
+}
+
+
+
+ @media only screen and (max-width: 600px) {
+  .banner2 {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left:0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .banner1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
